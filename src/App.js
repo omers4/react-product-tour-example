@@ -15,14 +15,14 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { TourContainer } from "./TourContainer";
+import { TourStop } from "./TourStop";
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
 }
 
 const rows = [
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
+  createData("Strawberry Fields Forever", 159, 6.0, 24, 4.0),
   createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
   createData("Eclair", 262, 16.0, 24, 6.0),
   createData("Cupcake", 305, 3.7, 67, 4.3),
@@ -39,9 +39,9 @@ export function BasicTable() {
             <TableCell align="right">Calories</TableCell>
             <TableCell align="right">Fat&nbsp;(g)</TableCell>
             <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TourContainer id="protein">
+            <TourStop id="protein">
               <TableCell align="right">Protein&nbsp;(g)</TableCell>
-            </TourContainer>
+            </TourStop>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -67,9 +67,9 @@ export function BasicTable() {
 
 function TopNavBar() {
   return (
-    <AppBar position="static">
+    <AppBar position="static" color="warning">
       <Toolbar>
-        <TourContainer id="first-step">
+        <TourStop id="side-menu">
           <IconButton
             size="large"
             edge="start"
@@ -79,14 +79,14 @@ function TopNavBar() {
           >
             <MenuIcon />
           </IconButton>
-        </TourContainer>
+        </TourStop>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Your daily diet
+          Food Dictionary
         </Typography>
 
-        <TourContainer id="login">
-          <Button color="inherit">Login</Button>
-        </TourContainer>
+        <TourStop id="login">
+          <Button color="inherit">Hello, Goodbye</Button>
+        </TourStop>
       </Toolbar>
     </AppBar>
   );
